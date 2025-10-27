@@ -106,7 +106,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none opacity-5">
+        <img 
+          src="https://cdn.poehali.dev/files/1ce7a63e-3ba1-4c2a-990d-6b82c5ae3d99.png" 
+          alt="Watermark" 
+          className="w-[600px] h-[600px] object-contain"
+        />
+      </div>
+      <div className="relative z-10">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground border-b-4 border-accent animate-fade-in">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -345,6 +353,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 };
