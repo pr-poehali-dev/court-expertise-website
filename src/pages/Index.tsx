@@ -77,7 +77,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Icon name="Shield" className="text-primary" size={28} />
-              <span className="text-xl font-semibold tracking-tight">СудЭксперт</span>
+              <span className="text-xl font-semibold tracking-tight">Экспертиза ПРО</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection("services")} className="text-sm font-medium hover:text-primary transition-colors">
@@ -265,10 +265,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <Icon name="Shield" className="text-primary" size={24} />
-              <span className="font-semibold">СудЭксперт</span>
+              <span className="font-semibold">Экспертиза ПРО</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              © 2024 Центр судебной экспертизы. Все права защищены.
+              © 2024 ООО «Экспертиза ПРО». Все права защищены.
             </p>
           </div>
         </div>
