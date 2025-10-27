@@ -107,11 +107,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none opacity-5">
+      <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none opacity-15">
         <img 
           src="https://cdn.poehali.dev/files/1ce7a63e-3ba1-4c2a-990d-6b82c5ae3d99.png" 
           alt="Watermark" 
-          className="w-[600px] h-[600px] object-contain"
+          className="w-[800px] h-[800px] object-contain"
         />
       </div>
       <div className="relative z-10">
