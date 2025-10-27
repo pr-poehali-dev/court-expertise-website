@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { useEffect, useRef, useState } from "react";
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -40,9 +41,38 @@ const Index = () => {
     }
   ];
 
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll('[data-animate]');
+    sections.forEach((section) => {
+      if (observerRef.current) {
+        observerRef.current.observe(section);
+      }
+    });
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border animate-fade-in">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -69,7 +99,7 @@ const Index = () => {
 
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-6">
+          <div className="text-center space-y-6 animate-fade-up">
             <h1 className="text-5xl md:text-7xl font-semibold tracking-tight">
               Независимая судебная экспертиза
             </h1>
@@ -88,24 +118,30 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-6 bg-muted/30">
+      <section 
+        id="about" 
+        data-animate 
+        className={`py-20 px-6 bg-muted/30 transition-all duration-700 ${
+          visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 text-center space-y-4 bg-card border-border">
+            <Card className="p-8 text-center space-y-4 bg-card border-border hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
                 <Icon name="Award" className="text-accent" size={28} />
               </div>
               <h3 className="text-2xl font-semibold">15+ лет опыта</h3>
               <p className="text-muted-foreground">Проведено более 5000 экспертиз</p>
             </Card>
-            <Card className="p-8 text-center space-y-4 bg-card border-border">
+            <Card className="p-8 text-center space-y-4 bg-card border-border hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
                 <Icon name="Users" className="text-accent" size={28} />
               </div>
               <h3 className="text-2xl font-semibold">Квалифицированные эксперты</h3>
               <p className="text-muted-foreground">Специалисты с высшей категорией</p>
             </Card>
-            <Card className="p-8 text-center space-y-4 bg-card border-border">
+            <Card className="p-8 text-center space-y-4 bg-card border-border hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
                 <Icon name="FileCheck" className="text-accent" size={28} />
               </div>
@@ -116,7 +152,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-6">
+      <section 
+        id="services" 
+        data-animate 
+        className={`py-20 px-6 transition-all duration-700 ${
+          visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Виды экспертиз</h2>
@@ -126,7 +168,11 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="p-6 space-y-4 hover:shadow-lg transition-shadow bg-card border-border">
+              <Card 
+                key={index} 
+                className="p-6 space-y-4 hover:shadow-lg transition-all duration-300 bg-card border-border hover:scale-105"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                   <Icon name={service.icon} className="text-accent" size={24} />
                 </div>
@@ -138,7 +184,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-6 bg-muted/30">
+      <section 
+        id="contact" 
+        data-animate 
+        className={`py-20 px-6 bg-muted/30 transition-all duration-700 ${
+          visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="container mx-auto max-w-4xl">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Связаться с нами</h2>
@@ -182,7 +234,7 @@ const Index = () => {
                   <label className="text-sm font-medium mb-2 block">Ваше имя</label>
                   <input 
                     type="text" 
-                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                     placeholder="Иван Иванов"
                   />
                 </div>
@@ -190,18 +242,18 @@ const Index = () => {
                   <label className="text-sm font-medium mb-2 block">Телефон</label>
                   <input 
                     type="tel" 
-                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                     placeholder="+7 (___) ___-__-__"
                   />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-2 block">Сообщение</label>
                   <textarea 
-                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring min-h-[100px]"
+                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring min-h-[100px] transition-all"
                     placeholder="Опишите вашу задачу"
                   />
                 </div>
-                <Button className="w-full h-11">Отправить заявку</Button>
+                <Button className="w-full h-11 transition-all hover:scale-105">Отправить заявку</Button>
               </div>
             </div>
           </Card>
