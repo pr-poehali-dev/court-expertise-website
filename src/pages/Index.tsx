@@ -111,7 +111,7 @@ const Index = () => {
         <img 
           src="https://cdn.poehali.dev/files/1ce7a63e-3ba1-4c2a-990d-6b82c5ae3d99.png" 
           alt="Watermark" 
-          className="w-[800px] h-[800px] object-contain"
+          className="w-[800px] h-[800px] object-contain animate-fade-in"
         />
       </div>
       <div className="relative z-10">
