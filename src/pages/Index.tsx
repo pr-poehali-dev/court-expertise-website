@@ -110,8 +110,12 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground border-b-4 border-accent animate-fade-in">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Icon name="Shield" className="text-accent" size={32} />
+            <div className="flex items-center gap-4">
+              <img 
+                src="https://cdn.poehali.dev/files/1ce7a63e-3ba1-4c2a-990d-6b82c5ae3d99.png" 
+                alt="Экспертиза ПРО" 
+                className="h-12 w-12 object-contain"
+              />
               <div className="flex flex-col">
                 <span className="text-lg font-bold tracking-tight">ООО «Экспертиза ПРО»</span>
                 <span className="text-xs opacity-90">Независимая судебная экспертиза</span>
@@ -135,20 +139,24 @@ const Index = () => {
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-primary/5 to-background">
-        <div className="container mx-auto max-w-6xl">
+      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-accent opacity-95"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)',
+        }}></div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-6 animate-fade-up">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-normal text-primary">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-normal text-white">
               Независимая судебная экспертиза
             </h1>
-            <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
               Профессиональные экспертные исследования для судов, органов следствия и частных лиц. Лицензия Минюста России.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Button size="lg" onClick={() => scrollToSection("contact")} className="text-base h-12 px-8 bg-accent hover:bg-accent/90">
+              <Button size="lg" onClick={() => scrollToSection("contact")} className="text-base h-12 px-8 bg-accent hover:bg-accent/90 border-2 border-white/20">
                 Получить консультацию
               </Button>
-              <Button size="lg" variant="outline" onClick={() => scrollToSection("services")} className="text-base h-12 px-8 border-primary text-primary hover:bg-primary hover:text-white">
+              <Button size="lg" variant="outline" onClick={() => scrollToSection("services")} className="text-base h-12 px-8 bg-white text-primary hover:bg-white/90 border-2 border-white">
                 Наши услуги
               </Button>
             </div>
@@ -159,29 +167,29 @@ const Index = () => {
       <section 
         id="about" 
         data-animate 
-        className={`py-20 px-6 bg-muted/30 transition-all duration-700 ${
+        className={`py-20 px-6 bg-white transition-all duration-700 ${
           visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 text-center space-y-4 bg-card border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto border-2 border-primary/20">
-                <Icon name="Award" className="text-primary" size={32} />
+            <Card className="p-8 text-center space-y-4 bg-card border-l-4 border-accent hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-accent/10 flex items-center justify-center mx-auto">
+                <Icon name="Award" className="text-accent" size={32} />
               </div>
               <h3 className="text-xl font-bold text-primary">15+ лет опыта</h3>
               <p className="text-foreground">Проведено более 5000 экспертиз</p>
             </Card>
-            <Card className="p-8 text-center space-y-4 bg-card border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto border-2 border-primary/20">
-                <Icon name="Users" className="text-primary" size={32} />
+            <Card className="p-8 text-center space-y-4 bg-card border-l-4 border-accent hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-accent/10 flex items-center justify-center mx-auto">
+                <Icon name="Users" className="text-accent" size={32} />
               </div>
               <h3 className="text-xl font-bold text-primary">Квалифицированные эксперты</h3>
               <p className="text-foreground">Специалисты с высшей категорией</p>
             </Card>
-            <Card className="p-8 text-center space-y-4 bg-card border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto border-2 border-primary/20">
-                <Icon name="FileCheck" className="text-primary" size={32} />
+            <Card className="p-8 text-center space-y-4 bg-card border-l-4 border-accent hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-accent/10 flex items-center justify-center mx-auto">
+                <Icon name="FileCheck" className="text-accent" size={32} />
               </div>
               <h3 className="text-xl font-bold text-primary">Все виды лицензий</h3>
               <p className="text-foreground">Аккредитация Минюста России</p>
@@ -193,7 +201,7 @@ const Index = () => {
       <section 
         id="services" 
         data-animate 
-        className={`py-20 px-6 transition-all duration-700 ${
+        className={`py-20 px-6 bg-muted transition-all duration-700 ${
           visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -208,11 +216,11 @@ const Index = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="p-6 space-y-4 hover:shadow-lg transition-all duration-300 bg-card border-l-4 border-primary hover:border-accent"
+                className="p-6 space-y-4 hover:shadow-xl transition-all duration-300 bg-white border-l-4 border-accent hover:border-primary"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-sm bg-primary/10 flex items-center justify-center border border-primary/20">
-                  <Icon name={service.icon} className="text-primary" size={24} />
+                <div className="w-12 h-12 bg-accent/10 flex items-center justify-center">
+                  <Icon name={service.icon} className="text-accent" size={24} />
                 </div>
                 <h3 className="text-lg font-bold text-primary">{service.title}</h3>
                 <p className="text-sm text-foreground">{service.description}</p>
@@ -225,84 +233,110 @@ const Index = () => {
       <section 
         id="contact" 
         data-animate 
-        className={`py-20 px-6 bg-muted/30 transition-all duration-700 ${
+        className={`py-20 px-6 bg-white transition-all duration-700 ${
           visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary">Связаться с нами</h2>
             <p className="text-lg text-foreground">
               Оставьте заявку, и мы свяжемся с вами в ближайшее время
             </p>
           </div>
-          <Card className="p-8 md:p-12 space-y-8 bg-card border-2 border-primary/20">
-            <div className="grid md:grid-cols-2 gap-8">
+          
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            <Card className="p-8 space-y-6 bg-card border-l-4 border-accent">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/20">
-                    <Icon name="Phone" className="text-primary" size={20} />
+                  <div className="w-12 h-12 bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Phone" className="text-accent" size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold mb-1 text-primary">Телефон</h4>
-                    <a href="tel:+79603402304" className="text-foreground hover:text-primary transition-colors">+7 (960) 340-23-04</a>
+                    <a href="tel:+79603402304" className="text-lg text-foreground hover:text-accent transition-colors">+7 (960) 340-23-04</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/20">
-                    <Icon name="Mail" className="text-primary" size={20} />
+                  <div className="w-12 h-12 bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Mail" className="text-accent" size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold mb-1 text-primary">Email</h4>
-                    <a href="mailto:expertpro64@bk.ru" className="text-foreground hover:text-primary transition-colors">expertpro64@bk.ru</a>
+                    <a href="mailto:expertpro64@bk.ru" className="text-lg text-foreground hover:text-accent transition-colors break-all">expertpro64@bk.ru</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/20">
-                    <Icon name="MapPin" className="text-primary" size={20} />
+                  <div className="w-12 h-12 bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="MapPin" className="text-accent" size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold mb-1 text-primary">Адрес</h4>
-                    <p className="text-foreground">г. Саратов, ул. Соколовая, 10/16</p>
+                    <p className="text-lg text-foreground">г. Саратов, ул. Соколовая, 10/16</p>
+                    <a 
+                      href="https://yandex.ru/maps/?rtext=~51.533557,46.034257" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-2 text-accent hover:text-accent/80 transition-colors"
+                    >
+                      <Icon name="Navigation" size={16} />
+                      <span className="text-sm font-medium">Открыть в Яндекс Навигаторе</span>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div className="space-y-4">
-                <div>
-                  <label className="text-sm font-medium mb-2 block">Ваше имя</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-                    placeholder="Иван Иванов"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium mb-2 block">Телефон</label>
-                  <input 
-                    type="tel" 
-                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-                    placeholder="+7 (___) ___-__-__"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium mb-2 block">Сообщение</label>
-                  <textarea 
-                    className="w-full px-4 py-2.5 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring min-h-[100px] transition-all"
-                    placeholder="Опишите вашу задачу"
-                  />
-                </div>
-                <Button className="w-full h-11 bg-accent hover:bg-accent/90 text-white font-bold">Отправить заявку</Button>
+            </Card>
+
+            <Card className="p-8 space-y-4 bg-card border-l-4 border-accent">
+              <div>
+                <label className="text-sm font-bold mb-2 block text-primary">Ваше имя</label>
+                <input 
+                  type="text" 
+                  className="w-full px-4 py-3 border-2 border-input bg-background focus:outline-none focus:border-accent transition-all"
+                  placeholder="Иван Иванов"
+                />
               </div>
-            </div>
+              <div>
+                <label className="text-sm font-bold mb-2 block text-primary">Телефон</label>
+                <input 
+                  type="tel" 
+                  className="w-full px-4 py-3 border-2 border-input bg-background focus:outline-none focus:border-accent transition-all"
+                  placeholder="+7 (___) ___-__-__"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-bold mb-2 block text-primary">Сообщение</label>
+                <textarea 
+                  className="w-full px-4 py-3 border-2 border-input bg-background focus:outline-none focus:border-accent min-h-[120px] transition-all"
+                  placeholder="Опишите вашу задачу"
+                />
+              </div>
+              <Button className="w-full h-12 bg-accent hover:bg-accent/90 text-white font-bold text-base">Отправить заявку</Button>
+            </Card>
+          </div>
+
+          <Card className="overflow-hidden border-l-4 border-accent">
+            <iframe 
+              src="https://yandex.ru/map-widget/v1/?ll=46.034257%2C51.533557&z=17&l=map&pt=46.034257,51.533557,pm2rdm"
+              width="100%" 
+              height="400"
+              frameBorder="0"
+              className="w-full"
+              title="Карта офиса Экспертиза ПРО"
+            ></iframe>
           </Card>
         </div>
       </section>
 
-      <footer className="py-12 px-6 border-t-4 border-accent bg-primary text-primary-foreground">
+      <footer className="py-12 px-6 bg-primary text-primary-foreground border-t-4 border-accent">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Icon name="Shield" className="text-accent" size={24} />
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://cdn.poehali.dev/files/1ce7a63e-3ba1-4c2a-990d-6b82c5ae3d99.png" 
+                alt="Экспертиза ПРО" 
+                className="h-10 w-10 object-contain"
+              />
               <span className="font-bold">ООО «Экспертиза ПРО»</span>
             </div>
             <p className="text-sm opacity-90">
