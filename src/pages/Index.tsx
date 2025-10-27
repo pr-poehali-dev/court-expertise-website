@@ -12,67 +12,80 @@ const Index = () => {
     {
       icon: "Building2",
       title: "Строительные экспертизы",
-      description: "Техническая экспертиза зданий, сооружений и строительных конструкций"
+      description: "Техническая экспертиза зданий, сооружений и строительных конструкций",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/461eac34-49bc-48b0-8603-4ba3e1196d18.jpg"
     },
     {
       icon: "MapPin",
       title: "Землеустроительные экспертизы",
-      description: "Определение границ земельных участков и их правовой статус"
+      description: "Определение границ земельных участков и их правовой статус",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/a2273e3c-daa5-4c8c-8696-3ba2d513bb59.jpg"
     },
     {
       icon: "Cable",
       title: "Экспертиза сетей",
-      description: "Исследование инженерных коммуникаций и сетевой инфраструктуры"
+      description: "Исследование инженерных коммуникаций и сетевой инфраструктуры",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/55b0a3d9-7603-46ed-afca-1a7684f33d9b.jpg"
     },
     {
       icon: "Car",
       title: "Экспертиза автомобилей",
-      description: "Оценка ущерба, технического состояния транспортных средств"
+      description: "Оценка ущерба, технического состояния транспортных средств",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/7660d241-9780-4cf1-94b2-96e172310ffe.jpg"
     },
     {
       icon: "Calculator",
       title: "Оценочные экспертизы",
-      description: "Определение рыночной стоимости имущества и материальных ценностей"
+      description: "Определение рыночной стоимости имущества и материальных ценностей",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/5b23c802-2102-4fe2-be6e-4ef36deefca9.jpg"
     },
     {
       icon: "Footprints",
       title: "Трасологическая экспертиза",
-      description: "Исследование следов, оставленных при контакте объектов"
+      description: "Исследование следов, оставленных при контакте объектов",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/d0df9a51-b992-4516-a60d-b993d41c5a93.jpg"
     },
     {
       icon: "Shirt",
       title: "Экспертиза одежды",
-      description: "Оценка качества, дефектов и соответствия нормам текстильных изделий"
+      description: "Оценка качества, дефектов и соответствия нормам текстильных изделий",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/b965c3ee-46f4-4661-8891-1a9fdf4433e0.jpg"
     },
     {
       icon: "Sofa",
       title: "Экспертиза мебели",
-      description: "Определение качества и выявление производственных недостатков"
+      description: "Определение качества и выявление производственных недостатков",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/fb7703d0-6eec-465c-8ffc-e56feb7ed5db.jpg"
     },
     {
       icon: "Plug",
       title: "Экспертиза электробытовых товаров",
-      description: "Исследование бытовой техники и электроприборов"
+      description: "Исследование бытовой техники и электроприборов",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/1de857ae-ca13-430c-adc5-35efe9fbb3fe.jpg"
     },
     {
       icon: "PenTool",
       title: "Почерковедческая экспертиза",
-      description: "Идентификация личности по почерку и подписи"
+      description: "Идентификация личности по почерку и подписи",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/4a8b6dfc-0058-4cf2-9313-0173a6b5a910.jpg"
     },
     {
       icon: "FileSearch",
       title: "Технико-криминалистическая экспертиза",
-      description: "Исследование документов на предмет подделки и изменений"
+      description: "Исследование документов на предмет подделки и изменений",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/179288d7-f4e6-4bea-89a8-22e15d1ada3a.jpg"
     },
     {
       icon: "FileCheck",
       title: "Рецензия судебных экспертиз",
-      description: "Независимая оценка качества проведённых экспертиз"
+      description: "Независимая оценка качества проведённых экспертиз",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/179288d7-f4e6-4bea-89a8-22e15d1ada3a.jpg"
     },
     {
       icon: "Receipt",
       title: "Бухгалтерская экспертиза",
-      description: "Анализ финансовой документации и бухгалтерского учёта"
+      description: "Анализ финансовой документации и бухгалтерского учёта",
+      image: "https://cdn.poehali.dev/projects/c5c43c1d-169c-4cb6-88ec-4d80150cf71e/files/8cddc8b5-32cb-4901-b849-88b8b44d6f34.jpg"
     }
   ];
 
@@ -224,14 +237,23 @@ const Index = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="p-6 space-y-4 hover:shadow-xl transition-all duration-300 bg-white border-l-4 border-accent hover:border-primary"
+                className="overflow-hidden hover:shadow-xl transition-all duration-300 bg-white border-l-4 border-accent hover:border-primary"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-12 h-12 bg-accent/10 flex items-center justify-center">
-                  <Icon name={service.icon} className="text-accent" size={24} />
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute top-4 left-4 w-12 h-12 bg-white/90 flex items-center justify-center rounded-lg shadow-lg">
+                    <Icon name={service.icon} className="text-accent" size={24} />
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-primary">{service.title}</h3>
-                <p className="text-sm text-foreground">{service.description}</p>
+                <div className="p-6 space-y-3">
+                  <h3 className="text-lg font-bold text-primary">{service.title}</h3>
+                  <p className="text-sm text-foreground">{service.description}</p>
+                </div>
               </Card>
             ))}
           </div>
