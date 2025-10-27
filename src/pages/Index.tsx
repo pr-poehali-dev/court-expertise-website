@@ -107,45 +107,48 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border animate-fade-in">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground border-b-4 border-accent animate-fade-in">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Icon name="Shield" className="text-primary" size={28} />
-              <span className="text-xl font-semibold tracking-tight">Экспертиза ПРО</span>
+            <div className="flex items-center gap-3">
+              <Icon name="Shield" className="text-accent" size={32} />
+              <div className="flex flex-col">
+                <span className="text-lg font-bold tracking-tight">ООО «Экспертиза ПРО»</span>
+                <span className="text-xs opacity-90">Независимая судебная экспертиза</span>
+              </div>
             </div>
-            <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection("services")} className="text-sm font-medium hover:text-primary transition-colors">
+            <div className="hidden md:flex items-center gap-6">
+              <button onClick={() => scrollToSection("services")} className="text-sm font-medium hover:text-accent transition-colors">
                 Услуги
               </button>
-              <button onClick={() => scrollToSection("about")} className="text-sm font-medium hover:text-primary transition-colors">
+              <button onClick={() => scrollToSection("about")} className="text-sm font-medium hover:text-accent transition-colors">
                 О нас
               </button>
-              <button onClick={() => scrollToSection("contact")} className="text-sm font-medium hover:text-primary transition-colors">
+              <button onClick={() => scrollToSection("contact")} className="text-sm font-medium hover:text-accent transition-colors">
                 Контакты
               </button>
             </div>
-            <Button onClick={() => scrollToSection("contact")} size="sm" className="hidden md:flex">
+            <Button onClick={() => scrollToSection("contact")} size="sm" className="hidden md:flex bg-accent hover:bg-accent/90 text-white">
               Заказать экспертизу
             </Button>
           </div>
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-primary/5 to-background">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-6 animate-fade-up">
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-normal text-primary">
               Независимая судебная экспертиза
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-normal">
-              Профессиональные экспертные исследования для судов, органов следствия и частных лиц
+            <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
+              Профессиональные экспертные исследования для судов, органов следствия и частных лиц. Лицензия Минюста России.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Button size="lg" onClick={() => scrollToSection("contact")} className="text-base h-12 px-8">
+              <Button size="lg" onClick={() => scrollToSection("contact")} className="text-base h-12 px-8 bg-accent hover:bg-accent/90">
                 Получить консультацию
               </Button>
-              <Button size="lg" variant="outline" onClick={() => scrollToSection("services")} className="text-base h-12 px-8">
+              <Button size="lg" variant="outline" onClick={() => scrollToSection("services")} className="text-base h-12 px-8 border-primary text-primary hover:bg-primary hover:text-white">
                 Наши услуги
               </Button>
             </div>
@@ -162,26 +165,26 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 text-center space-y-4 bg-card border-border hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
-                <Icon name="Award" className="text-accent" size={28} />
+            <Card className="p-8 text-center space-y-4 bg-card border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto border-2 border-primary/20">
+                <Icon name="Award" className="text-primary" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold">15+ лет опыта</h3>
-              <p className="text-muted-foreground">Проведено более 5000 экспертиз</p>
+              <h3 className="text-xl font-bold text-primary">15+ лет опыта</h3>
+              <p className="text-foreground">Проведено более 5000 экспертиз</p>
             </Card>
-            <Card className="p-8 text-center space-y-4 bg-card border-border hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
-                <Icon name="Users" className="text-accent" size={28} />
+            <Card className="p-8 text-center space-y-4 bg-card border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto border-2 border-primary/20">
+                <Icon name="Users" className="text-primary" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold">Квалифицированные эксперты</h3>
-              <p className="text-muted-foreground">Специалисты с высшей категорией</p>
+              <h3 className="text-xl font-bold text-primary">Квалифицированные эксперты</h3>
+              <p className="text-foreground">Специалисты с высшей категорией</p>
             </Card>
-            <Card className="p-8 text-center space-y-4 bg-card border-border hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
-                <Icon name="FileCheck" className="text-accent" size={28} />
+            <Card className="p-8 text-center space-y-4 bg-card border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto border-2 border-primary/20">
+                <Icon name="FileCheck" className="text-primary" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold">Все виды лицензий</h3>
-              <p className="text-muted-foreground">Аккредитация Минюста России</p>
+              <h3 className="text-xl font-bold text-primary">Все виды лицензий</h3>
+              <p className="text-foreground">Аккредитация Минюста России</p>
             </Card>
           </div>
         </div>
@@ -196,8 +199,8 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Виды экспертиз</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">Виды экспертиз</h2>
+            <p className="text-lg text-foreground max-w-2xl mx-auto">
               Полный спектр судебных экспертиз для решения любых задач
             </p>
           </div>
@@ -205,14 +208,14 @@ const Index = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="p-6 space-y-4 hover:shadow-lg transition-all duration-300 bg-card border-border hover:scale-105"
+                className="p-6 space-y-4 hover:shadow-lg transition-all duration-300 bg-card border-l-4 border-primary hover:border-accent"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <Icon name={service.icon} className="text-accent" size={24} />
+                <div className="w-12 h-12 rounded-sm bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <Icon name={service.icon} className="text-primary" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <h3 className="text-lg font-bold text-primary">{service.title}</h3>
+                <p className="text-sm text-foreground">{service.description}</p>
               </Card>
             ))}
           </div>
@@ -228,39 +231,39 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-4xl">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Связаться с нами</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">Связаться с нами</h2>
+            <p className="text-lg text-foreground">
               Оставьте заявку, и мы свяжемся с вами в ближайшее время
             </p>
           </div>
-          <Card className="p-8 md:p-12 space-y-8 bg-card border-border">
+          <Card className="p-8 md:p-12 space-y-8 bg-card border-2 border-primary/20">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Icon name="Phone" className="text-accent" size={20} />
+                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/20">
+                    <Icon name="Phone" className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Телефон</h4>
-                    <p className="text-muted-foreground">+7 (495) 123-45-67</p>
+                    <h4 className="font-bold mb-1 text-primary">Телефон</h4>
+                    <p className="text-foreground">+7 (495) 123-45-67</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Icon name="Mail" className="text-accent" size={20} />
+                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/20">
+                    <Icon name="Mail" className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-muted-foreground">info@sudexpert.ru</p>
+                    <h4 className="font-bold mb-1 text-primary">Email</h4>
+                    <p className="text-foreground">info@expertiza-pro.ru</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Icon name="MapPin" className="text-accent" size={20} />
+                  <div className="w-10 h-10 rounded-sm bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/20">
+                    <Icon name="MapPin" className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Адрес</h4>
-                    <p className="text-muted-foreground">г. Москва, ул. Примерная, д. 1</p>
+                    <h4 className="font-bold mb-1 text-primary">Адрес</h4>
+                    <p className="text-foreground">г. Москва, ул. Примерная, д. 1</p>
                   </div>
                 </div>
               </div>
@@ -288,21 +291,21 @@ const Index = () => {
                     placeholder="Опишите вашу задачу"
                   />
                 </div>
-                <Button className="w-full h-11 transition-all hover:scale-105">Отправить заявку</Button>
+                <Button className="w-full h-11 bg-accent hover:bg-accent/90 text-white font-bold">Отправить заявку</Button>
               </div>
             </div>
           </Card>
         </div>
       </section>
 
-      <footer className="py-12 px-6 border-t border-border">
+      <footer className="py-12 px-6 border-t-4 border-accent bg-primary text-primary-foreground">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <Icon name="Shield" className="text-primary" size={24} />
-              <span className="font-semibold">Экспертиза ПРО</span>
+              <Icon name="Shield" className="text-accent" size={24} />
+              <span className="font-bold">ООО «Экспертиза ПРО»</span>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm opacity-90">
               © 2024 ООО «Экспертиза ПРО». Все права защищены.
             </p>
           </div>
